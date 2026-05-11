@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LTL Landscaping LLC | Lancaster County, SC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-dark:  #1B3A1D;
+      --green-mid:   #2E6B35;
+      --green-light: #4A9455;
+      --brown:       #7A5230;
+      --brown-light: #A0724A;
+      --cream:       #F7F3ED;
+      --cream-dark:  #EDE8DF;
+      --text-dark:   #1A1A1A;
+      --text-muted:  #5A5A5A;
+      --white:       #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; line-height: 1.2; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--green-dark);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.35);
+    }
+
+    .logo-mark {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+    .logo-mark .ltl {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      font-size: 1.6rem;
+      color: var(--white);
+      letter-spacing: 2px;
+    }
+    .logo-mark .sub {
+      font-family: 'Inter', sans-serif;
+      font-size: .65rem;
+      color: #A8D5AC;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .nav-phone {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--white);
+      text-decoration: none;
+      background: var(--green-mid);
+      padding: 8px 18px;
+      border-radius: 6px;
+      transition: background .2s;
+    }
+    .nav-phone:hover { background: var(--green-light); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(160deg, var(--green-dark) 0%, #2A5C2E 55%, #3D7A42 100%);
+      padding: 90px 24px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.25);
+      color: #C5E8C8;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 30px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      color: var(--white);
+      max-width: 740px;
+      margin: 0 auto 20px;
+    }
+    .hero h1 span { color: #8FD494; }
+
+    .hero-sub {
+      font-size: clamp(.95rem, 2vw, 1.15rem);
+      color: #C5E8C8;
+      max-width: 560px;
+      margin: 0 auto 36px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--brown);
+      color: var(--white);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 15px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background .2s, transform .15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--brown-light); transform: translateY(-2px); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 14px 30px;
+      border-radius: 8px;
+      border: 2px solid rgba(255,255,255,.5);
+      text-decoration: none;
+      transition: border-color .2s, background .2s;
+      display: inline-block;
+    }
+    .btn-secondary:hover { border-color: var(--white); background: rgba(255,255,255,.08); }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--cream-dark);
+      border-bottom: 1px solid #D8D2C8;
+      padding: 18px 24px;
+    }
+    .trust-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px 40px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--green-dark);
+    }
+    .trust-item .icon { font-size: 1.1rem; }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 80px 24px; }
+    .section-label {
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      color: var(--green-dark);
+      margin-bottom: 14px;
+    }
+    .section-sub {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 560px;
+      margin-bottom: 50px;
+    }
+    .centered { text-align: center; margin-left: auto; margin-right: auto; }
+
+    /* ── SERVICES ── */
+    .services-section { background: var(--cream); }
+
+    .services-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid #E0DAD2;
+      border-radius: 12px;
+      padding: 28px 22px;
+      text-align: center;
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(27,58,29,.12);
+      border-color: var(--green-light);
+    }
+    .service-icon {
+      font-size: 2.2rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .service-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 8px;
+    }
+    .service-card p {
+      font-size: .85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ── TRANSFORMATION ── */
+    .transformation-section { background: var(--white); }
+    .transform-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    @media (max-width: 680px) {
+      .transform-inner { grid-template-columns: 1fr; gap: 30px; }
+    }
+
+    .transform-story h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 16px;
+    }
+    .transform-story p {
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      font-size: .95rem;
+    }
+
+    .transform-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .transform-card {
+      border-radius: 12px;
+      padding: 22px 24px;
+      position: relative;
+    }
+    .transform-card.before {
+      background: #FFF4ED;
+      border: 1px solid #F0C9A8;
+    }
+    .transform-card.after {
+      background: #EDF7EE;
+      border: 1px solid #A8D5AC;
+    }
+    .transform-card .tag {
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .transform-card.before .tag { color: var(--brown); }
+    .transform-card.after .tag { color: var(--green-mid); }
+    .transform-card p { font-size: .9rem; color: var(--text-dark); }
+    .transform-arrow {
+      text-align: center;
+      font-size: 1.5rem;
+      color: var(--green-mid);
+    }
+
+    /* ── REVIEWS ── */
+    .reviews-section { background: var(--green-dark); }
+    .reviews-section .section-label { color: #8FD494; }
+    .reviews-section .section-title { color: var(--white); }
+    .reviews-section .section-sub { color: #A8D5AC; }
+
+    .reviews-grid {
+      max-width: 1050px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .review-card {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 14px;
+      padding: 30px 26px;
+      transition: background .2s;
+    }
+    .review-card:hover { background: rgba(255,255,255,.13); }
+
+    .stars { color: #F5C542; font-size: 1rem; margin-bottom: 14px; letter-spacing: 2px; }
+    .review-text {
+      font-size: .93rem;
+      color: #D8EFD9;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    .review-author {
+      font-weight: 700;
+      color: var(--white);
+      font-size: .9rem;
+    }
+    .review-detail {
+      font-size: .8rem;
+      color: #8FD494;
+      margin-top: 2px;
+    }
+
+    /* ── ABOUT ── */
+    .about-section { background: var(--cream); }
+    .about-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .about-avatar {
+      width: 90px;
+      height: 90px;
+      background: var(--green-mid);
+      border-radius: 50%;
+      margin: 0 auto 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      font-size: 2rem;
+      color: var(--white);
+    }
+    .about-inner h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      color: var(--green-dark);
+      margin-bottom: 18px;
+    }
+    .about-inner p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      line-height: 1.8;
+    }
+    .about-stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 36px;
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--green-mid);
+      display: block;
+    }
+    .stat-label {
+      font-size: .82rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--brown) 0%, #9B6B42 100%);
+      text-align: center;
+      padding: 80px 24px;
+    }
+    .cta-section h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+    .cta-section p {
+      color: rgba(255,255,255,.85);
+      font-size: 1.05rem;
+      margin-bottom: 36px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-white {
+      background: var(--white);
+      color: var(--brown);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 15px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background .2s, transform .15s;
+      display: inline-block;
+    }
+    .btn-white:hover { background: var(--cream); transform: translateY(-2px); }
+
+    .btn-outline-white {
+      background: transparent;
+      color: var(--white);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 14px 30px;
+      border-radius: 8px;
+      border: 2px solid rgba(255,255,255,.6);
+      text-decoration: none;
+      transition: border-color .2s;
+      display: inline-block;
+    }
+    .btn-outline-white:hover { border-color: var(--white); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--green-dark);
+      color: #A8D5AC;
+      text-align: center;
+      padding: 32px 24px;
+      font-size: .85rem;
+    }
+    footer a { color: #8FD494; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .footer-logo {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    /* ── FADE ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero h1, .hero-sub, .hero-badge, .hero-ctas {
+      animation: fadeUp .6s ease both;
+    }
+    .hero-badge  { animation-delay: .05s; }
+    .hero h1     { animation-delay: .15s; }
+    .hero-sub    { animation-delay: .25s; }
+    .hero-ctas   { animation-delay: .35s; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 480px) {
+      nav { padding: 0 16px; }
+      .nav-phone { font-size: .85rem; padding: 7px 14px; }
+      .hero { padding: 60px 20px 60px; }
+      section { padding: 60px 20px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-stats { gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo-mark">
+    <span class="ltl">LTL</span>
+    <span class="sub">Landscaping LLC</span>
+  </div>
+  <a class="nav-phone" href="tel:7049991673">📞 (704) 999-1673</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">🌿 Lancaster County, South Carolina</div>
+  <h1>Your Yard Done Right —<br /><span>Every Single Time</span></h1>
+  <p class="hero-sub">From lawn maintenance to full hardscapes, LTL Landscaping delivers reliable, professional results. Clients trust us for years — not just one job.</p>
+  <div class="hero-ctas">
+    <a class="btn-primary" href="tel:7049991673">Call for a Free Quote</a>
+    <a class="btn-secondary" href="mailto:Ltllandscaping2@gmail.com">Send Us an Email</a>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><span class="icon">⭐</span> 5+ Year Client Relationships</div>
+    <div class="trust-item"><span class="icon">📍</span> Lancaster County Local</div>
+    <div class="trust-item"><span class="icon">✅</span> Always On Time, Always Cleans Up</div>
+    <div class="trust-item"><span class="icon">🚜</span> Heavy Equipment On-Site</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services-section">
+  <div style="max-width:1100px; margin:0 auto;">
+    <p class="section-label centered">What We Do</p>
+    <h2 class="section-title centered">Full-Service Landscaping<br />For Lancaster County Homeowners</h2>
+    <p class="section-sub centered">One crew. Every job. From a fresh mulch install to clearing rough terrain — we handle it all so you don't have to call three different companies.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-icon">🌿</span>
+        <h3>Lawn Maintenance</h3>
+        <p>Reliable weekly or bi-weekly care that keeps your yard looking sharp all season long.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🧱</span>
+        <h3>Hardscapes</h3>
+        <p>Patios, walkways, and brickwork built to last — and built to impress.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🌱</span>
+        <h3>Landscape Installs</h3>
+        <p>Plants, shrubs, and garden beds designed and installed to thrive in South Carolina's climate.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🚜</span>
+        <h3>Brush Hogging</h3>
+        <p>Overgrown fields and rough terrain cleared fast with the right equipment for the job.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🗑️</span>
+        <h3>Debris Removal</h3>
+        <p>Leaves, brush, and yard waste hauled away completely. No mess left behind.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🏗️</span>
+        <h3>Grading</h3>
+        <p>Proper grading that levels your land and keeps water draining away from your home.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🛤️</span>
+        <h3>Gravel Driveways</h3>
+        <p>Durable, clean driveways installed right so they hold up year after year.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🍂</span>
+        <h3>Mulch</h3>
+        <p>Fresh mulch delivered and installed for cleaner beds and healthier plants.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">✂️</span>
+        <h3>Trimming</h3>
+        <p>Edges, hedges, and overgrown shrubs trimmed to a clean, professional finish.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSFORMATION STORY -->
+<section class="transformation-section">
+  <div class="transform-inner">
+    <div class="transform-story">
+      <p class="section-label">Real Results</p>
+      <h3>From Overgrown Hill to the Backyard His Kids Can Finally Use</h3>
+      <p>One of our Lancaster County clients had a steep hill in the backyard buried under years of overgrown shrubs. His kids couldn't play on it — it was just wasted space.</p>
+      <p>Lance and the crew removed every shrub, graded the hill, laid fresh topsoil, and put down sod. Ten days later the family had a lush green hill ready for the kids to run on.</p>
+      <p style="font-style: italic; color: var(--green-mid); font-weight: 600;">"10 days later and I have a very green hill that the boys will love playing on." — Shawn W.</p>
+      <br />
+      <a class="btn-primary" href="tel:7049991673" style="display:inline-block; margin-top:6px;">Get Your Free Quote</a>
+    </div>
+    <div class="transform-visual">
+      <div class="transform-card before">
+        <div class="tag">Before</div>
+        <p>Hill covered in dense shrubs — unusable, overgrown, no way for the family to enjoy the space.</p>
+      </div>
+      <div class="transform-arrow">⬇</div>
+      <div class="transform-card after">
+        <div class="tag">After — 10 Days</div>
+        <p>Clean, graded, fresh sod — a lush green hill the whole family can enjoy. Completed on time, cleaned up completely.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section">
+  <p class="section-label centered">What Clients Say</p>
+  <h2 class="section-title centered">People Don't Leave. They Stay for Years.</h2>
+  <p class="section-sub centered" style="color:#A8D5AC; margin-left:auto; margin-right:auto;">Our clients aren't one-time customers. They trust Lance with their yards season after season.</p>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Lance has taken care of our lawn for over 5 years now, and we couldn't be happier with his work. He has always been reliable, professional, and meticulous in maintaining our yard, ensuring it looks beautiful year-round. Lance has also helped us with a couple of landscaping projects, demonstrating his creativity and expertise in transforming our outdoor space."</p>
+      <div class="review-author">Erin L.</div>
+      <div class="review-detail">5+ Year Client · Lawn Maintenance &amp; Landscaping</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"I have been with Lance for five years plus and have been very pleased with his work. He has done the yard along with brickwork. Lance has also done the beds for mulch and shrubs. He is always prompt, attentive to details — he cleans up after his work! Very trustworthy, I consider Lance a friend and would highly recommend."</p>
+      <div class="review-author">PeggySue S.</div>
+      <div class="review-detail">5+ Year Client · Maintenance, Brickwork &amp; Mulch</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Lance did great work. Had a hill filled with shrubs that my boys couldn't use. Lance removed everything, graded, laid down top soil, then placed sod. 10 days later and I have a very green hill that the boys will love playing on. Can't wait to see how it looks in a couple more weeks!"</p>
+      <div class="review-author">Shawn W.</div>
+      <div class="review-detail">Hill Clearing, Grading &amp; Sod Install</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section">
+  <div class="about-inner">
+    <div class="about-avatar">LT</div>
+    <p class="section-label">About Lance</p>
+    <h2>Lancaster County's Landscaper You Can Actually Count On</h2>
+    <p>My name is Lance Townsend and I've been taking care of yards across Lancaster County for years. I started LTL Landscaping because I believed there was a better way — show up when you say you will, do the work right, and leave the property cleaner than you found it.</p>
+    <p>That's not a marketing line. Ask any client who's been with me for five years.</p>
+    <p>Whether you need a simple mulch refresh or a full property transformation with grading, hardscapes, and installs — my crew handles it with the same standard: professional, thorough, and done right.</p>
+    <div class="about-stats">
+      <div class="stat">
+        <span class="stat-num">5+</span>
+        <span class="stat-label">Years Avg. Client<br>Relationship</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">9</span>
+        <span class="stat-label">Services<br>Offered</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">100%</span>
+        <span class="stat-label">Always Cleans<br>Up After</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Ready for a Yard You're Proud Of?</h2>
+  <p>Call or email today for a free quote. No pressure — just a straight answer on what your yard needs and what it'll cost.</p>
+  <div class="cta-buttons">
+    <a class="btn-white" href="tel:7049991673">📞 Call (704) 999-1673</a>
+    <a class="btn-outline-white" href="mailto:Ltllandscaping2@gmail.com">✉ Email Us</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">LTL Landscaping LLC</div>
+  <p>Lancaster County, South Carolina</p>
+  <p style="margin-top:6px;">
+    <a href="tel:7049991673">(704) 999-1673</a> &nbsp;·&nbsp;
+    <a href="mailto:Ltllandscaping2@gmail.com">Ltllandscaping2@gmail.com</a>
+  </p>
+  <p style="margin-top:16px; font-size:.78rem; color:#5A8A5E;">© 2025 LTL Landscaping LLC · All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
